@@ -15,24 +15,27 @@ var bio = {
 
 bio.display = function(){
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
-  $("#header").append(formattedName);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-  $("#header").append(formattedRole);
   var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
-  $("#header").append(formattedbioPic);
   var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-  $("#header").append(formattedEmail);
-  $("#footerContacts").append(formattedEmail);
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-  $("#header").append(formattedMobile);
-  $("#footerContacts").append(formattedMobile);
   var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
-  $("#header").append(formattedHTMLgithub);
-  $("#footerContacts").append(formattedHTMLgithub);
   var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-  $("#footerContacts").append(formattedHTMLlocation);
   var formattedHTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-  $("#header").append(formattedHTMLwelcomeMsg);
+
+  $("#header").prepend(formattedRole).prepend(formattedName);
+
+  $("#header").append(formattedbioPic).append(formattedHTMLwelcomeMsg);
+
+  $("#topContacts").append(formattedMobile)
+        .append(formattedEmail)
+        .append(formattedHTMLgithub)
+        .append(formattedHTMLlocation);
+
+  $("#footerContacts").append(formattedMobile)
+        .append(formattedEmail)
+        .append(formattedHTMLgithub)
+        .append(formattedHTMLlocation);
 
   if(bio.skills.length > 0) {
     $("#header").append(HTMLskillsStart);
