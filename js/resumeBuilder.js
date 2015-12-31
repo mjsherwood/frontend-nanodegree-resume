@@ -111,12 +111,18 @@ var education = {
     {
       "name": "Brigham Young University",
       "location": "Provo, UT, US",
-      "majors": ["Portuguese", "English"]
+      "degree": "Test",
+      "majors": ["Portuguese", "English"],
+      "dates": 1997,
+      "url": "http://home.byu.edu/home/"
     },
     {
       "name": "Dixie State University",
       "location": "Saint George, UT, US",
-      "majors": "Journalism"
+      "degree": "",
+      "majors": "Journalism",
+      "dates": 1998,
+      "url": "http://dixie.edu/"
     }
   ],
   "onlineCourses": [
@@ -139,8 +145,12 @@ var education = {
       $("#education").append(HTMLschoolStart);
       var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
       $(".education-entry:last").append(formattedName);
+      var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+      $(".education-entry:last").append(formattedDegree);
       var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].location);
       $(".education-entry:last").append(formattedCity);
+      var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+      $(".education-entry:last").append(formattedDates);
       var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
       $(".education-entry:last").append(formattedMajor);
     }
@@ -201,5 +211,4 @@ var projects = {
 };
 projects.display();
 
-$("#main").append(internationalizeButton);
 $("#mapDiv").append(googleMap);
