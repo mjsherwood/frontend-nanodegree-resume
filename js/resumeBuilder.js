@@ -1,4 +1,5 @@
 var bio = {
+
   'name': 'Michael Sherwood',
   'role': 'Web Developer',
   'contacts': {
@@ -103,7 +104,7 @@ var work = {
 
 };
 
-work.display();
+
 work.locationizer();
 
 var education = {
@@ -169,7 +170,6 @@ var education = {
   }
  }
 };
-education.display();
 
 var projects = {
   "projects": [
@@ -209,6 +209,9 @@ var projects = {
     }
   }
 };
+
+education.display();
 projects.display();
+work.display();
 
 $("#mapDiv").append(googleMap);
