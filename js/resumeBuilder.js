@@ -1,48 +1,38 @@
 var bio = {
-  "name": "Michael Sherwood",
-  "role": "Web Developer",
-  "contacts": {
-    "mobile": "+55 (11) 99217-9393",
-    "email": "mjsherwood@gmail.com",
-    "github": "mjsherwood",
-    "location": "Sâo Paulo, Brazil"
+  'name': 'Michael Sherwood',
+  'role': 'Web Developer',
+  'contacts': {
+    'mobile': '+55 (11) 99217-9393',
+    'email': 'mjsherwood@gmail.com',
+    'github': 'mjsherwood',
+    'location': 'Sâo Paulo, Brazil'
   },
-  "bioPic": "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/000/219/3ba/3b164c0.jpg",
-  "welcomeMessage": "Thanks for visiting my page. Feel free to contact me if I can be of service.",
-  "skills": ["Customer Experience", "Operations", "Strategy", "Business Development"]
+  'biopic': 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/2/000/219/3ba/3b164c0.jpg',
+  'welcomeMessage': 'Thanks for visiting my page. Feel free to contact me if I can be of service.',
+  'skills': ['Customer Experience', 'Operations', 'Strategy', 'Business Development']
 };
 
+function displayBio() {
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 $("#header").append(formattedName);
-
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 $("#header").append(formattedRole);
-
-var formattedbioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+var formattedbioPic = HTMLbioPic.replace("%data%", bio.biopic);
 $("#header").append(formattedbioPic);
-
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#header").append(formattedEmail);
 $("#footerContacts").append(formattedEmail);
-
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#header").append(formattedMobile);
 $("#footerContacts").append(formattedMobile);
-
 var formattedHTMLgithub = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#header").append(formattedHTMLgithub);
 $("#footerContacts").append(formattedHTMLgithub);
-
 var formattedHTMLlocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#footerContacts").append(formattedHTMLlocation);
-
 var formattedHTMLwelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $("#header").append(formattedHTMLwelcomeMsg);
 
-
-
-
-function displayBio() {
 if(bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
 
@@ -59,17 +49,6 @@ if(bio.skills.length > 0) {
   }
 }
 displayBio();
-
-function inName(name){
-  name = bio.name.trim().split(" ");
-  name[1] = name[1].toUpperCase();
-  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
-
-  return name[0] +" "+name[1];
-
-$('#main').append(internationalizeButton);
-}
-
 
 var work = {
   "jobs": [
@@ -132,25 +111,25 @@ var education = {
     {
       "name": "Brigham Young University",
       "location": "Provo, UT, US",
-      "major": ["Portuguese", "English"]
+      "majors": ["Portuguese", "English"]
     },
     {
       "name": "Dixie State University",
       "location": "Saint George, UT, US",
-      "major": "Journalism"
+      "majors": "Journalism"
     }
   ],
   "onlineCourses": [
     {
       "title": "Intro To Programming Nanodegree",
       "school": "Udacity",
-      "dates": 2015,
+      "date": 2015,
       "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
     },
     {
       "title": "Front-End Web Developer Nanodegree",
       "school": "Udacity",
-      "dates": 2016,
+      "date": 2016,
       "url": "https://www.udacity.com/course/intro-to-programming-nanodegree--nd000"
     }
   ],
@@ -162,7 +141,7 @@ var education = {
       $(".education-entry:last").append(formattedName);
       var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].location);
       $(".education-entry:last").append(formattedCity);
-      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+      var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
       $(".education-entry:last").append(formattedMajor);
     }
     $("#education").append(HTMLonlineClasses);
@@ -172,7 +151,7 @@ var education = {
         $(".education-entry:last").append(formattedonlineTitle);
         var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
         $(".education-entry:last").append(formattedonlineSchool);
-        var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+        var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].date);
         $(".education-entry:last").append(formattedonlineDates);
         var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
         $(".education-entry:last").append(formattedonlineURL);
